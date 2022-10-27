@@ -2,7 +2,7 @@
 
 /*
 #include "add.h"
-#include "add.c"   åœ¨add.hä¸­è¿›è¡Œå¼•ç”¨add.cå‡½æ•°ä¹Ÿå¯ä»¥
+#include "add.c"   ÔÚadd.hÖÐ½øÐÐÒýÓÃadd.cº¯ÊýÒ²¿ÉÒÔ
 
 int main()
 {
@@ -15,7 +15,7 @@ int main()
     return 0;
 }
 */
-/*é€’å½’
+/*µÝ¹é
 void print(int n){
     if(n>9){
         print(n/10);
@@ -26,7 +26,7 @@ void print(int n){
 int main(){
     unsigned int num=0;
     scanf("%d",&num);
-    //é€’å½’
+    //µÝ¹é
     print(num);
 }
 */

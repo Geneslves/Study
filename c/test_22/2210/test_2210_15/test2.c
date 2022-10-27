@@ -1,4 +1,4 @@
-//å‡½æ•°é€’å½’ æ±‚né˜¶ä¹˜
+//º¯ÊýµÝ¹é Çón½×³Ë
 #include"stdio.h"
 int Fac(int n){
     if (n>1)
