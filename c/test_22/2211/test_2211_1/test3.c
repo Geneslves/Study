@@ -80,6 +80,7 @@ int main(){
     int input = 0;
     int x = 0;
     int y = 0;
+    // pfArr 是一个函数指针数组 - 转移表
     int (*pfAdd[5])(int,int) = {0,add,sub,mul,div};
     do{
         menu();
