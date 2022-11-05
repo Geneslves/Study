@@ -56,18 +56,19 @@ void test1()
     int arr[10] = {9, 8, 7, 6, 5, 4, 3, 2, 1, 0};
     struct Stu s[3] = {{"zhangsan", 20}, {"lisi", 30}, {"wangwu", 10}};
     int sz = sizeof(s) / sizeof(s[0]);
-    bubble_sort(s, sz, sizeof(s[0]), cmp_int);
+    bubble_sort(s, sz, sizeof(arr[0]), cmp_int);
 }
 
 void test2()
 {
     struct Stu s[3] = {{"zhangsan", 20}, {"lisi", 30}, {"wangwu", 10}};
     int sz = sizeof(s) / sizeof(s[0]);
-    //bubble_sort(s, sz, sizeof(s[0]), cmp_stu_by_age);
+    bubble_sort(s, sz, sizeof(s[0]), cmp_stu_by_age);
 }
 
 int main()
 {
    // test1();
     test2();
+    return 0;
 }
