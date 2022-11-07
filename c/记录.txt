@@ -152,10 +152,10 @@ C语言中对字符和字符串的处理很是频繁，但是C语言本身是没
 --------------------------------------------------------------------------------------------------------------------------------
 求字符串长度
         strlen
-长度不受限制的字符串函数
+长度不受限制的字符串函数       遇到字符串的'\0'才停止
         strcpy        复制
         strcat        追加
-        strcmp
+        strcmp        比较对应字符
 长度受限制的字符串函数介绍
         strncpy
         strncat
@@ -186,20 +186,39 @@ C语言中对字符和字符串的处理很是频繁，但是C语言本身是没
     目标空间必须足够大，以确保能存放源字符串。
     目标空间必须可变。
     学会模拟实现。                                    test_22\2211\test_2211_6\2_test.c
-    strcopy(arr1,arr2);   把arr2拷贝到arr1; 
+    strcopy(arr1,arr2);   把arr2拷贝到arr1; 替换arr1中的对应字符
 --------------------------------------------------------------------------------------------------------------------------------
 3. strcat       char * strcat ( char * destination, const char * source );
     Appends a copy of the source string to the destination string. The terminating null characterin destination is overwritten by
      the first character of source, and a null-character is includedat the end of the new string formed by the concatenation of
      both in destination.
-    源字符串必须以 '\0' 结束。
+    源字符串必须以 '\0' 结束。以目标字符串的'\0'开始追加。
     目标空间必须有足够的大，能容纳下源字符串的内容。
     目标空间必须可修改。
     字符串自己给自己追加，如何？              找不到'\0'进入死循环
                                                     test_22\2211\test_2211_6\3_test.c
 --------------------------------------------------------------------------------------------------------------------------------
+4 strcmp         int strcmp ( const char * str1, const char * str2 );
+    This function starts comparing the first character of each string. If they are equal to eachother, it continues with the 
+    following pairs until the characters differ or until a terminating null-character is reached.
+    标准规定：
+        第一个字符串大于第二个字符串，则返回大于0的数字
+        第一个字符串等于第二个字符串，则返回0
+        第一个字符串小于第二个字符串，则返回小于0的数字
+                                                    test_22\2211\test_2211_7\1_test.c
 --------------------------------------------------------------------------------------------------------------------------------
+5.strncpy        char * strncpy ( char * destination, const char * source, size_t num );
+    Copies the first num characters of source to destination. If the end of the source C string (which is signaled by a 
+    null-character) is found before num characters have been copied,destination is padded with zeros until a total of num 
+    characters have been written to it.
+    拷贝num个字符从源字符串到目标空间。不自动追加'\0'
+    如果源字符串的长度小于num，则拷贝完源字符串之后，在目标的后边追加0（\0），直到num个。
+    
 --------------------------------------------------------------------------------------------------------------------------------
+6.strncat   char * strncat ( char * destination, const char * source, size_t num );
+    Appends the first num characters of source to destination, plus a terminating null-character.
+    If the length of the C string in source is less than num, only the content up to the terminatingnull-character is copied.
+    在追加字符串最后自动追加'\0'
 --------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------
