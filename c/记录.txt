@@ -215,12 +215,17 @@ C语言中对字符和字符串的处理很是频繁，但是C语言本身是没
     如果源字符串的长度小于num，则拷贝完源字符串之后，在目标的后边追加0（\0），直到num个。
     
 --------------------------------------------------------------------------------------------------------------------------------
-6.strncat   char * strncat ( char * destination, const char * source, size_t num );
+6.strncat       char * strncat ( char * destination, const char * source, size_t num );
     Appends the first num characters of source to destination, plus a terminating null-character.
     If the length of the C string in source is less than num, only the content up to the terminatingnull-character is copied.
     在追加字符串最后自动追加'\0'
 --------------------------------------------------------------------------------------------------------------------------------
+7.strncmp        int strncmp ( const char * str1, const char * str2, size_t num );
+    比较到出现另个字符不一样或者一个字符串结束或者num个字符全部比较完。
 --------------------------------------------------------------------------------------------------------------------------------
+8.strstr         char * strstr ( const char *str1, const char * str2);
+    Returns a pointer to the first occurrence of str2 in str1, or a null pointer if str2 is not part ofstr1.
+                                                                test_22\2211\test_2211_8\1_test.c
 --------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------
