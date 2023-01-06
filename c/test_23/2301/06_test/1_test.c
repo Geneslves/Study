@@ -1,6 +1,7 @@
 /*
 将 1~100 的数据以 10x10 矩阵格式输出。
 */
+
 #include <stdio.h>
  
 int main() {
