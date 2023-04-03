@@ -5,7 +5,7 @@
 
 typedef struct
 {
-    ElemType *elem; // 存储空间的基地址
+    ElemType *elem[MZXSIZE]; // 存储空间的基地址
     int length;     // 当前的长度
 } SqList;           // 顺序表的结构类型为SqList
 
