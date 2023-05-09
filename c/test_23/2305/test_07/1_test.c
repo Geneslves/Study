@@ -22,25 +22,29 @@ bool StackEmpty(SqStack *s)
 {
     return s->top == -1;
 }
+
 // 新元素入栈
 bool Push(SqStack *s, char x)
 {
     if (s->top == MaxSize - 1)
     {
-        return false;
+        return false; // 栈满，入栈失败
     }
 
     s->data[++s->top] = x;
+    return true; // 入栈成功
 }
+
 // 栈顶元素出栈
-bool Pop(SqStack *s, char x)
+bool Pop(SqStack *s, char *x)
 {
     if (s->top == -1)
     {
-        return false;
+        return false; // 栈空，出栈失败
     }
 
-    s->data[s->top--] = x;
+    *x = s->data[s->top--];
+    return true; // 出栈成功
 }
 
 bool bracketCheck(char str[], int length)
@@ -57,8 +61,9 @@ bool bracketCheck(char str[], int length)
         {
             if (StackEmpty(&S))
                 return false;
+
             char topElem;
-            Pop(&S, topElem);
+            Pop(&S, &topElem);
             if (str[i] == ')' && topElem != '(')
                 return false;
             if (str[i] == ']' && topElem != '[')
@@ -72,8 +77,22 @@ bool bracketCheck(char str[], int length)
 
 int main()
 {
-    int length = 10;
     char str[11];
-    strcpy(str, "[{()([])}]");
-    bracketCheck(str, length);
+    int length;
+
+    strcpy(str, "[{()([])}][");
+    length = strlen(str);
+
+    bool result = bracketCheck(str, length);
+
+    if (result)
+    {
+        printf("Brackets are balanced\n");
+    }
+    else
+    {
+        printf("Brackets are not balanced\n");
+    }
+
+    return 0;
 }
