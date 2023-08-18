@@ -1,5 +1,5 @@
 //改进的KMP算法
-#include "sqstring.c"
+#include "sqstring.cpp"
 void GetNextval(SqString t,int nextval[])  //由模式串t求出nextval值
 {
 	int j=0,k=-1;

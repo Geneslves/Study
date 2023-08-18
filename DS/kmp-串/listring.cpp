@@ -1,13 +1,12 @@
 //链串基本运算的算法
 #include <stdio.h>
 #include <malloc.h>
-#include "stdbool.h"
 typedef struct snode 
 {	
 	char data;
 	struct snode *next;
 } LinkStrNode;
-void StrAssign(LinkStrNode *s,char cstr[])	//字符串常量cstr赋给串s
+void StrAssign(LinkStrNode *&s,char cstr[])	//字符串常量cstr赋给串s
 {
 	int i;
 	LinkStrNode *r,*p;
@@ -20,7 +19,7 @@ void StrAssign(LinkStrNode *s,char cstr[])	//字符串常量cstr赋给串s
 	}
 	r->next=NULL;
 }
-void DestroyStr(LinkStrNode *s)
+void DestroyStr(LinkStrNode *&s)
 {	LinkStrNode *pre=s,*p=s->next;	//pre指向结点p的前驱结点
 	while (p!=NULL)					//扫描链串s
 	{	free(pre);					//释放pre结点
@@ -29,7 +28,7 @@ void DestroyStr(LinkStrNode *s)
 	}
 	free(pre);						//循环结束时,p为NULL,pre指向尾结点,释放它
 }
-void StrCopy(LinkStrNode *s,LinkStrNode *t)	//串t复制给串s
+void StrCopy(LinkStrNode *&s,LinkStrNode *t)	//串t复制给串s
 {
 	LinkStrNode *p=t->next,*q,*r;
 	s=(LinkStrNode *)malloc(sizeof(LinkStrNode));
